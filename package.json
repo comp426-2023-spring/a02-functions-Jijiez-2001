@@ -18,6 +18,7 @@
   "bin": {
     "galosh.js": "./cli.js"
   },
+  "type": "module",
   "dependencies": {
     "minimist": "^1.2.8",
     "moment-timezone": "^0.5.42",
