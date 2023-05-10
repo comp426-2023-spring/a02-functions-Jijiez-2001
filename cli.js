@@ -1,12 +1,4 @@
 #!/usr/bin / env node
-/*
- * @Descripttion: ZJJ Code
- * @version: 1.0.0
- * @Author: ZJJ
- * @Date: 2023-05-10 14:29:24
- * @LastEditors: ZJJ
- * @LastEditTime: 2023-05-10 18:36:40
- */
 
 import minimist from "minimist";
 import moment from "moment-timezone";
