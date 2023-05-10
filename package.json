@@ -2,7 +2,6 @@
   "name": "a02",
   "version": "0.0.1",
   "description": "This package is json configuration of a02",
-  "main": "index.js",
   "scripts": {
     "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
   },
@@ -23,6 +22,6 @@
     "minimist": "^1.2.8",
     "moment-timezone": "^0.5.42",
     "node-fetch": "^3.3.1"
-  }
+  },
   "homepage": "https://github.com/comp426-2023-spring/a02-functions-Jijiez-2001#readme"
 }
