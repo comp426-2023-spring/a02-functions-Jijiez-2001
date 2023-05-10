@@ -5,12 +5,12 @@
  * @Author: ZJJ
  * @Date: 2023-05-10 14:29:24
  * @LastEditors: ZJJ
- * @LastEditTime: 2023-05-10 18:32:59
+ * @LastEditTime: 2023-05-10 18:36:40
  */
 
-const fetch = require('node-fetch');
-const moment = require('moment-timezone');
-const minimist = require('minimist');
+import minimist from "minimist";
+import moment from "moment-timezone";
+import fetch from "node-fetch";
 
 const args = minimist(process.argv.slice(2));
 
