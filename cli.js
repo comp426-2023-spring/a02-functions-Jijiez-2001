@@ -45,7 +45,7 @@ if (args.j) {
   console.log(data);
   process.exit(0);
 }
-
+//test
 //days
 const days = args.d;
 if (days == 0) {
