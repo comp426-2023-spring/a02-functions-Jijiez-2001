@@ -40,6 +40,7 @@ const url =
 const response = await fetch(url);
 const data = await response.json();
 
+//JSON
 if (args.j) {
   console.log(data);
   process.exit(0);
