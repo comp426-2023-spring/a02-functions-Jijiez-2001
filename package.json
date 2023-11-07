@@ -15,7 +15,7 @@
     "url": "https://github.com/comp426-2023-spring/a02-functions-Jijiez-2001/issues"
   },
   "bin": {
-    "galosh.js": "cli.js"
+    "galosh.js": "./cli.js"
   },
   "type": "module",
   "dependencies": {
