@@ -34,9 +34,6 @@ if (args.n && args.s) {
   latitude = args.n;
 } else if (args.s) {
   latitude = -args.s;
-} else {
-  console.log("please enter latitude in range to make it valid");
-  process.exit(0);
 }
 
 if (args.e && args.w) {
@@ -46,9 +43,6 @@ if (args.e && args.w) {
   longitude = args.e;
 } else if (args.w) {
   longitude = -args.w;
-} else {
-  console.log("please enter longitude in range to make it valid");
-  process.exit(0);
 }
 
 const url =
