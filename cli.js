@@ -28,6 +28,7 @@ if (args.z) {
 let latitude = args.n || -args.s;
 let longitude = args.e || -args.w;
 
+//get the data
 const url =
   "https://api.open-meteo.com/v1/forecast?latitude=" +
   latitude +
@@ -36,7 +37,6 @@ const url =
   "&timezone=" +
   timezone +
   "&daily=precipitation_hours&current_weather=true";
-
 const response = await fetch(url);
 const data = await response.json();
 
