@@ -15,13 +15,14 @@
     "url": "https://github.com/comp426-2023-spring/a02-functions-Jijiez-2001/issues"
   },
   "bin": {
-    "galosh.js": "./cli.js"
+    "galosh.js": "cli.js"
   },
   "type": "module",
   "dependencies": {
     "minimist": "^1.2.8",
-    "moment-timezone": "^0.5.42",
-    "node-fetch": "^3.3.1"
+    "moment-timezone": "^0.5.43",
+    "node-fetch": "^3.3.2"
   },
-  "homepage": "https://github.com/comp426-2023-spring/a02-functions-Jijiez-2001#readme"
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-Jijiez-2001#readme",
+  "main": "cli.js"
 }

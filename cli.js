@@ -1,4 +1,4 @@
-#!/usr/bin / env node
+#!/usr/bin /env node
 
 import minimist from "minimist";
 import moment from "moment-timezone";
@@ -17,77 +17,64 @@ if (args.h) {
   process.exit(0);
 }
 
-let timezone = moment.tz.guess();
+//timezone: first default, is args.z has value then change
+let timezone;
 if (args.z) {
   timezone = args.z;
+} else {
+  timezone = moment.tz.guess();
 }
 
 let latitude, longitude;
 
 if (args.n && args.s) {
-  console.log("Only one latitude");
+  console.log("please enter only one latitude");
   process.exit(0);
-}
-else if (args.n) {
+} else if (args.n) {
   latitude = args.n;
-}
-else if (args.s) {
+} else if (args.s) {
   latitude = -args.s;
-}
-else {
-  console.log("Latitude must be in range");
+} else {
+  console.log("please enter latitude in range to make it valid");
   process.exit(0);
 }
 
 if (args.e && args.w) {
-  console.log("Only one longitude value");
+  console.log("please enter only one longitude");
   process.exit(0);
-}
-else if (args.e) {
+} else if (args.e) {
   longitude = args.e;
-}
-else if (args.w) {
+} else if (args.w) {
   longitude = -args.w;
-}
-else {
-  console.log("Longitude must be in range");
+} else {
+  console.log("please enter longitude in range to make it valid");
   process.exit(0);
 }
 
-const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=${timezone}&daily=precipitation_hours`;
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    const days = args.d || 1;
-    let string;
+const url =
+  "https://api.open-meteo.com/v1/forecast?latitude=" +
+  latitude +
+  "&longitude=" +
+  longitude +
+  "&timezone=" +
+  timezone +
+  "&daily=precipitation_hours";
 
-    if (data.daily.precipitation_hours[days] == 0) {
-      string = "You will not need your galoshes ";
-    } else {
-      string = "You might need your galoshes ";
-    }
+const response = await fetch(url);
+const data = await response.json();
+const days = args.d;
 
-    if (days == 0) {
-      string += "today.";
-    } else if (days > 1) {
-      string += `in ${days} days.`;
-    } else {
-      string += "tomorrow.";
-    }
+if (args.j) {
+  console.log(data);
+  process.exit(0);
+}
 
-    if (args.j) {
-      console.log(JSON.stringify(data, null, 2));
-    } else {
-      console.log(string);
-    }
-  })
-  .catch(error => console.error(error));
+if (days == 0) {
+  console.log("today.");
+} else if (days > 1) {
+  console.log("in " + days + " days.");
+} else {
+  console.log("tomorrow.");
+}
 
-
-
-
-
-
-
-
-
+process.exit(0);
